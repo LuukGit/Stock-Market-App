@@ -1,0 +1,35 @@
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #111133; }
+
+#line-chart {
+  height: 500px;
+  width: 100%; }
+
+#stock-list form {
+  width: 285px;
+  margin: 0 auto; }
+#stock-list input {
+  align: center;
+  text-align: center;
+  width: 200px;
+  height: 30px;
+  margin-right: 10px; }
+#stock-list button {
+  width: 75px;
+  height: 30px; }
+
+#stock {
+  background-color: white;
+  display: inline-block;
+  border: 1px solid black;
+  min-height: 150px;
+  width: 350px;
+  padding-left: 15px;
+  margin: 20px 30px 20px 0px; }
+
+#stock:hover {
+  box-shadow: 0 0 2px black; }
+
+/*# sourceMappingURL=home.css.map */
