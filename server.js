@@ -11,10 +11,6 @@ var io = require("socket.io").listen(server);
 
 require("dotenv").load();
 
-var bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
-
 mongoose.connect(process.env.MONGO_URI);
 
 app.use("/client", express.static(process.cwd() + "/client"));
@@ -40,7 +36,6 @@ io.on("connection", function(socket) {
         socket.broadcast.emit("remove", stock);
     });
 });
-
 
 routes(app);
 
