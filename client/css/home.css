@@ -4,21 +4,47 @@ body {
   background-color: #111133; }
 
 #line-chart {
-  height: 500px;
-  width: 100%; }
+  margin-top: 20px;
+  background-color: #222244;
+  height: 340px;
+  width: 100%;
+  color: white; }
 
-#stock-list form {
-  width: 285px;
-  margin: 0 auto; }
-#stock-list input {
-  align: center;
-  text-align: center;
-  width: 200px;
-  height: 30px;
-  margin-right: 10px; }
-#stock-list button {
-  width: 75px;
-  height: 30px; }
+#chart {
+  margin-top: 40px; }
+  #chart .axis {
+    font: 10px sans-serif;
+    fill: white; }
+  #chart path {
+    fill: "none";
+    stroke-width: 2;
+    stroke: "white"; }
+  #chart .axis path,
+  #chart .axis line {
+    fill: none;
+    stroke: white;
+    stroke-width: 1;
+    shape-rendering: crispEdges; }
+  #chart .line {
+    fill: none;
+    stroke-width: 1.5px; }
+  #chart .legend {
+    border: 1px solid white; }
+
+#stock-list {
+  margin-top: 20px; }
+  #stock-list form {
+    width: 285px;
+    margin: 0 auto; }
+  #stock-list input {
+    align: center;
+    text-align: center;
+    width: 200px;
+    height: 30px;
+    margin-right: 10px; }
+  #stock-list button {
+    width: 75px;
+    height: 30px; }
 
 #stock {
   background-color: white;

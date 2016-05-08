@@ -27,14 +27,12 @@ class App extends React.Component {
     }
 
     localAddStock(stock) {
-        console.log(stock);
         var new_data = this.state.data;
         new_data.unshift(stock);
         this.setState({ data: new_data });
     }
 
     localRemoveStock(stock) {
-        console.log(stock);
         var new_data = this.state.data;
         for (var i = 0; i < new_data.length; i++) {
             if (new_data[i].stock_code == stock.stock_code) {
@@ -53,7 +51,7 @@ class App extends React.Component {
             else if (data != "existing stock") {
                 socket.emit("add", data);
                 var new_data = this.state.data;
-                new_data.unshift(data);
+                new_data.push(data);
                 this.setState({ data: new_data });
             }
         }.bind(this));

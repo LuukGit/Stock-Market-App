@@ -9,11 +9,43 @@ body {
 }
 
 #line-chart {
-    height: 500px;
+    margin-top: 20px;
+    background-color: #222244;
+    height: 340px;
     width: 100%;
+    color: white;
+}
+
+#chart {
+    margin-top: 40px;
+    .axis {
+      font: 10px sans-serif;
+      fill: white;
+    }
+
+    path {
+        fill: "none";
+        stroke-width: 2;
+        stroke: "white";
+    }
+
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: white;
+      stroke-width: 1;
+      shape-rendering: crispEdges;
+    }
+
+    .line {
+      fill: none;
+      stroke-width: 1.5px;
+    }
 }
 
 #stock-list {
+    margin-top: 20px;
+
     form {
         width: 285px;
         margin: 0 auto;

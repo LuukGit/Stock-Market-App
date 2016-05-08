@@ -16,10 +16,13 @@ module.exports = function(app) {
             if (day < 10) {
                 day = "0" + day;
             }
-            var month = date.getMonth();
-            var month2 = month + 1;
-            if (month == 0) {
-                month = 12;
+            var month = date.getMonth() - 6;
+            var month2 = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var year2 = year;
+            if (month <= 0) {
+                month = 12 + month;
+                year -= 1;
             }
             if (month < 10) {
                 month = "0" + month;
@@ -27,19 +30,16 @@ module.exports = function(app) {
             if (month2 < 10) {
                 month2 = "0" + month2;
             }
-            var year = date.getFullYear();
-            var end_date = day + "-" + month2 + "-" + year;
-            if (month == 12) {
-                year -= 1;
-            }
             var start_date = day + "-" + month + "-" + year;
+            var end_date = day + "-" + month2 + "-" + year2;
 
             // Create URL and perform API call to Quandl.
             var url = "https://www.quandl.com/api/v3/datasets/WIKI/" + req.params.code + ".json?api_key=" + process.env.API_KEY + "&start_date=" + start_date +
                         "&end_date=" + end_date + "&column_index=4";
+
             request(url, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
-                    var data = JSON.parse(body)
+                    var data = JSON.parse(body);
                     // if bad data, res.json("invalid stock")
                     // else, create object with just the .dataset_code and .name parameters
                     if (data) {
